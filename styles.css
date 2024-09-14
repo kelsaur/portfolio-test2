@@ -64,7 +64,9 @@ p {
   color: rgba(63, 125, 88, 1);
 }
 
-.kolumn, nav, .page-content {
+.kolumn,
+nav,
+.page-content {
   border: 1px solid saddlebrown;
 }
 
@@ -79,6 +81,7 @@ nav {
 
 nav:nth-child(even) {
   width: 1440px;
+  background-color: rgba(63, 125, 88, 1);
 }
 
 .rader {
@@ -94,7 +97,26 @@ nav:nth-child(even) {
   width: 240px;
 }
 
-.page-content .rader:nth-of-type(odd) .kolumn:nth-of-type(even),
-.page-content .rader:nth-of-type(even) .kolumn:nth-of-type(odd) {
+.rader:nth-child(odd) .kolumn:nth-child(1),
+.rader:nth-child(odd) .kolumn:nth-child(3) {
   background-color: rgba(63, 125, 88, 1);
+}
+
+.rader:nth-child(even) .kolumn:nth-child(2) {
+  background-color: rgba(63, 125, 88, 1);
+}
+
+.rader:nth-child(1),
+.rader:nth-child(5),
+.rader:nth-child(6) {
+  height: 200px;
+}
+
+.rader:nth-child(2),
+.rader:nth-child(3) {
+  height: 128px;
+}
+
+.rader:nth-child(4) {
+  height: 190px;
 }
