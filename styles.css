@@ -28,21 +28,32 @@ html {
   scroll-behavior: smooth;
 }
 
+ul[role="list"],
+ol[role="list"],
+li {
+  list-style: none;
+}
+
 @font-face {
   font-family: GeistFont;
   src: url(Geist-Bold.otf);
 }
 
+@font-face {
+  font-family: GeistFontMedium;
+  src: url(Geist-Medium.otf);
+}
+
 body {
   background-color: rgb(239, 239, 239);
   width: 100%;
-  cursor: url(cursor_3.png), auto;
+  cursor: url(my_cursor.png), auto;
   font-family: GeistFont;
 }
 
 h1 {
-  margin: 0;
-  font-size: 12rem;
+  margin-top: 0.1vh;
+  font-size: 17rem;
   line-height: 1;
   color: rgba(63, 125, 88, 1);
 }
@@ -60,15 +71,19 @@ h3 {
   color: rgba(63, 125, 88, 1);
 }
 
-p {
+p,
+ul,
+li {
   color: rgba(63, 125, 88, 1);
+  font-family: GeistFontMedium;
 }
 
+/*
 .kolumn,
 nav,
 .page-content {
-  border: 1px solid saddlebrown;
-}
+  border: 1px solid rebeccapurple;
+} */
 
 header {
   display: flex;
@@ -76,12 +91,21 @@ header {
 }
 
 nav {
-  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 7vh;
+  font-size: 2.3rem;
 }
 
 nav:nth-child(even) {
-  width: 1440px;
+  width: 90vw;
   background-color: rgba(63, 125, 88, 1);
+}
+
+nav:hover {
+  transform: scaleY(-1) scaleX(-1);
 }
 
 .rader {
@@ -90,13 +114,19 @@ nav:nth-child(even) {
 }
 
 .kolumn:nth-child(even) {
-  width: 1440px;
+  width: 90vw;
 }
 
 .kolumn {
-  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 15vw;
 }
 
+/*Färg och storklek pattern på layout*/
 .rader:nth-child(odd) .kolumn:nth-child(1),
 .rader:nth-child(odd) .kolumn:nth-child(3) {
   background-color: rgba(63, 125, 88, 1);
@@ -119,4 +149,56 @@ nav:nth-child(even) {
 
 .rader:nth-child(4) {
   height: 190px;
+}
+
+.rader:nth-child(7) {
+  height: 300px;
+}
+
+/*Infinite scroll text*/
+.myname {
+  animation: 8s linear infinite;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.rader:nth-child(3) .kolumn:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1vw;
+  padding-right: 5vw;
+  align-items: flex-start;
+  padding-top: 3vh;
+  box-sizing: border-box;
+}
+
+.rader:nth-child(5) .kolumn:nth-child(2) h1 {
+  font-size: 12rem;
+}
+
+.rader:nth-child(7) .kolumn:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5vw;
+
+  li {
+    font-size: 3em;
+  }
+
+  li:hover {
+    filter: blur(1px);
+    font-size: 4em;
+  }
+}
+
+img:hover {
+  transform: scale(1.1);
 }
