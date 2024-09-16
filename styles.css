@@ -173,11 +173,16 @@ nav:hover {
 .rader:nth-child(3) .kolumn:nth-child(2) {
   display: flex;
   justify-content: space-between;
-  padding-left: 1vw;
-  padding-right: 5vw;
+
   align-items: flex-start;
   padding-top: 3vh;
   box-sizing: border-box;
+
+  p,
+  li {
+    padding-right: 2vw;
+    padding-left: 2vw;
+  }
 }
 
 .rader:nth-child(5) .kolumn:nth-child(2) h1 {
@@ -187,10 +192,10 @@ nav:hover {
 .rader:nth-child(7) .kolumn:nth-child(2) {
   display: flex;
   justify-content: flex-start;
-  padding-left: 5vw;
 
   li {
     font-size: 3em;
+    padding-left: 5vw;
   }
 
   li:hover {
